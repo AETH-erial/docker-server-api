@@ -3,6 +3,7 @@ CLI for docker_server_api
 """
 from argparse import ArgumentParser
 import uvicorn
+from dotenv import load_dotenv
 
 
 def cli() -> None:
@@ -24,6 +25,7 @@ def cli() -> None:
     args = arg_parser.parse_args()
 
     try:
+        load_dotenv()
         if args.which_sub == 'start':
             uvicorn.run('docker_server_api:web_app', reload=args.reload,
                         host='0.0.0.0', port=int(args.port))

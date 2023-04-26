@@ -136,3 +136,6 @@ dmypy.json
 
 # No temp_*.py files
 temp_*.py
+
+# no cfg files
+docker_server_api/configuration/api_config.cfg
